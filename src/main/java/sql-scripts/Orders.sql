@@ -40,3 +40,36 @@ ALTER TABLE public.t_orders
 
 ALTER TABLE public.t_orders_actions
     OWNER to postgres;
+    
+    
+    
+    
+    
+    ALTER TABLE public.t_orders
+    RENAME "date_expousre:" TO date_expousure;
+
+ALTER TABLE public.t_orders
+    ADD COLUMN price double precision NOT NULL;
+
+ALTER TABLE public.t_orders
+    ADD COLUMN action_id bigint NOT NULL;
+    
+    ALTER TABLE public.t_orders
+    ADD COLUMN "number" character(9) NOT NULL;
+    
+    
+
+    ALTER TABLE public.t_orders DROP COLUMN action_id;
+    
+    ALTER TABLE public.t_orders_actions
+    ADD COLUMN id bigint NOT NULL;
+ALTER TABLE public.t_orders_actions
+    ADD PRIMARY KEY (id);
+    
+    
+    ALTER TABLE public.t_orders
+    ALTER COLUMN "number" TYPE character(11) COLLATE pg_catalog."default";
+   
+    ALTER TABLE public.t_orders DROP COLUMN price;
+    
+    
