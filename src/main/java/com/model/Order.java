@@ -58,7 +58,7 @@ public class Order extends OrderAbstract {
 	    for (Long actionID : actionIDs) {
 	        TraceOrderAction traceOrderAction = new TraceOrderAction();
 	        traceOrderAction.setOrder(this);
-	        traceOrderAction.setAction(new Action(actionID)); // Predpokladáme, že máte konštruktor Action s parametrom ID
+	        traceOrderAction.setAction(new Action(actionID)); 
 	        this.actions.add(traceOrderAction);
 	    }
 	}
